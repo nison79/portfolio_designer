@@ -4,6 +4,11 @@
   margin:0;
 }
 
+:root {
+  --primary: #ED4264;
+  --secondary: #FFEDBC;
+}
+
 body{
   font-family: 'Poppins' ,sans-serif;
 }
@@ -14,7 +19,7 @@ body{
   /* background-color: antiquewhite; */
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(#FC354C,#0ABFBC);
+  background-image: linear-gradient(var(--primary),var(--secondary));
 }
 
 .left{
@@ -22,7 +27,6 @@ body{
   flex-direction: column;
   align-items: flex-start;
   flex:0.6;
-  
 }
 
 .left-text{
@@ -33,7 +37,7 @@ body{
 .left-text .left-text-small{
   font-size:2rem;
   background-color: #f3ec78;
-    background-image: linear-gradient(250deg, #FC354C, #ffffff);
+    background-image: linear-gradient(250deg, var(--secondary), #ffffff);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -43,11 +47,11 @@ body{
 
 
 .left h1 {
+  margin-bottom: -50px;
   color:white;
-  padding-bottom: 2rem;;
   opacity: 0;
   font-size:12rem;
-  letter-spacing: -5px;
+  letter-spacing: -9px;
   transform: translateX(-500px) scale(0);
 }
 
@@ -121,8 +125,8 @@ button:focus {
 
 svg{
   position:absolute;
-  right:80px;
-  bottom:300px;
+  right:10px;
+  bottom:460px;
   width:120px;
   padding:20px;
   cursor:pointer;
@@ -166,6 +170,7 @@ svg{
       }
       .left h1 {
         font-size: 6rem;
+        
         
       }
       .left-text .left-text-small {
