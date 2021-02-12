@@ -5,6 +5,24 @@ const box4 = document.getElementById('4');
 const button = document.getElementById('button'); 
 const right = document.getElementsByClassName('.right')
 const left = document.getElementsByClassName('.left')
+const open = document.getElementById('open');
+const modal = document.getElementById('modal')
+
+
+
+
+//Show modal
+open.addEventListener('click' , () => modal.classList.add('show-modal'));
+
+//Hide modal
+window.addEventListener('click' , e => e.target == modal ? modal.classList.remove('show-modal') : false );
+
+
+
+
+
+
+
 
 //Event listeners
 box1.addEventListener('toggle' , () => {
@@ -12,6 +30,8 @@ box1.addEventListener('toggle' , () => {
   gsap.to(".left p" , {duration:1 , scale:3 , y:1000, ease: "power2.out"})
 
 })
+
+
 
 
 
@@ -32,4 +52,4 @@ gsap.from(".projects", {
   
 });
 
-gsap.from("svg", {duration:3.5 , scale:5, rotate:360, x:-2000, y:1000 , ease:"back.out(1.2)"})
+gsap.from(".send", {duration:3 , scale:6, rotate:360,   ease:"back.out(1.9)"})

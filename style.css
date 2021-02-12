@@ -7,19 +7,23 @@
 :root {
   --primary: #ED4264;
   --secondary: #FFEDBC;
+  --modal-duration: 0.5s;
 }
 
 body{
   font-family: 'Poppins' ,sans-serif;
+  overflow:hidden;
 }
 
 .main-container {
+  position:relative;
   min-height: 100vh;
   display:flex;
   /* background-color: antiquewhite; */
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(var(--primary),var(--secondary));
+  z-index: 3;
 }
 
 .left{
@@ -27,6 +31,7 @@ body{
   flex-direction: column;
   align-items: flex-start;
   flex:0.6;
+  
 }
 
 .left-text{
@@ -53,6 +58,7 @@ body{
   font-size:12rem;
   letter-spacing: -9px;
   transform: translateX(-500px) scale(0);
+  text-shadow: 10px 7px 18px rgb(34, 34, 34);
 }
 
 .left p {
@@ -119,18 +125,33 @@ button:focus {
   border:1px solid white;
   min-width:200px;
   width:100px;
+  transition: 0.2s ease-in-out ;
   
 }
 
+.projects-box:hover{
+  transform:scale(1.0500)
+}
 
-svg{
+
+.send{
   position:absolute;
-  right:10px;
-  bottom:460px;
+  top:1%;
+  right:2%;
   width:120px;
   padding:20px;
   cursor:pointer;
+  width:100px;
 }
+
+.send img{
+  width:70px;
+}
+
+
+
+
+/* //Media Queries */
 
 
 @media (max-width:1080px){
@@ -139,13 +160,78 @@ svg{
   }
   .left h1 {
     font-size: 8rem;
+    margin-bottom:10px;
     
   }
   .left p {
     font-size:2rem;
     
-    }
   }
+
+  svg {
+    bottom:570px;
+    right:20px;
+    width:100px;
+  }
+    /* .projects {
+      display:flex;
+      flex-direction: column;
+      margin-bottom: 500px;
+      justify-content: center;
+      justify-self: center;
+      margin-right:280px; */
+}
+
+.modal-container {
+  background-color: rgba(0,0,0,.6);
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 50;
+}
+
+
+
+.modal-container.show-modal {
+  display:block;
+  
+}
+
+.modal {
+  background-color: rgb(133, 83, 83);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  position:absolute;
+  overflow: hidden;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  max-width:100%;
+  width:900px;
+  height:900px;
+  animation-name: modalopen;
+  animation-duration:var(--modal-duration);
+  z-index: 23;
+}
+
+.modal h2 {
+  font-size: 5rem;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1
+  }
+}
+
+
+
 
   @media (max-width:553px){
     .projects {
@@ -153,7 +239,7 @@ svg{
       flex-direction: column;
     }
     svg {
-      bottom:350px;
+      bottom:570px;
       right:10px;
       width:100px;
       
@@ -162,7 +248,7 @@ svg{
       font-size:2rem;
       
       }
-    }
+}
 
     @media (max-width:476px){
       .main-container {
@@ -177,5 +263,10 @@ svg{
         font-size:1.2rem;
         
         }
+
+      .projects {
+        justify-content: center;
+        justify-self: center;
+        margin-right:140px;
       }
-  
+}
