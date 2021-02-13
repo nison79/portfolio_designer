@@ -20,26 +20,20 @@ window.addEventListener('click' , e => e.target == modal ? modal.classList.remov
 
 
 
-
-
-
-
 //Event listeners
-box1.addEventListener('toggle' , () => {
-  gsap.to(".left h1" , {duration:1.5 , scale:5 , x:-2000, ease: "power2.out"})
-  gsap.to(".left p" , {duration:1 , scale:3 , y:1000, ease: "power2.out"})
+open.addEventListener('click' , () => {
+  gsap.to(".modal" , {duration:1.5 , scale:1.2 ,  ease: "power2.out"})
+  // gsap.to(".left" , {duration:1 , scale:3 ,  ease: "power2.out"})
 
 })
 
 
-
-
-
 //Animation by GSAP
 gsap.to(".left h1" , {duration:1.5 ,opacity:1 , ease: "power2.out", x: 0 , scale:1});
-// gsap.to(".right" , {duration:3 ,opacity:1 , ease: "power2.out", y: 0 });
+gsap.to(".right" , {duration:3 ,opacity:1 , ease: "power2.out", y: 0 });
 gsap.to(".left p" , {duration:3 ,opacity:1 , ease: "back.out(1.7)", x: 0});
 // gsap.to(".projects" , {duration:3 , ease: ": back.out(1.5)" , stagger:0.2 })
+gsap.to(".left h2" , {duration:3.1 ,opacity:1 , delay:0.5, ease: "back.out(1.9)", x: 0});
 
 
 gsap.from(".projects", {

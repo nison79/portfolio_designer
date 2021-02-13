@@ -42,12 +42,23 @@ body{
 .left-text .left-text-small{
   font-size:2rem;
   background-color: #f3ec78;
-    background-image: linear-gradient(250deg, var(--secondary), #ffffff);
+    background-image: linear-gradient(250deg, var(--primary), #048768);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+}
+
+.left-text h2{
+  text-shadow: 1px 1px 18px rgb(125, 125, 125);
+  color:white;
+  font-size:3rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+  transform: translateX(-800px);
+  opacity:0.5;
+  margin-left:10px;
 }
 
 
@@ -70,6 +81,7 @@ body{
   transform: translateX(-500px);
   opacity:0.5;
   margin-left:10px;
+  
 }
 
 /* button{
@@ -111,8 +123,9 @@ button:focus {
 .projects{
   display:grid;
   grid-template-columns: 1fr 1fr ;
-  padding:4px;
+  padding:8px;
   margin:50px;
+  
   
 }
 
@@ -125,6 +138,7 @@ button:focus {
   border:1px solid white;
   min-width:200px;
   width:100px;
+  height:100px;
   transition: 0.2s ease-in-out ;
   
 }
@@ -148,20 +162,26 @@ button:focus {
   width:70px;
 }
 
+.send img:hover{
+  transform:scale(1.0900)
+}
+
 
 
 
 /* //Media Queries */
 
 
-@media (max-width:1080px){
+@media (max-width:1024px){
   .main-container {
     flex-direction: column;
   }
   .left h1 {
     font-size: 8rem;
     margin-bottom:10px;
-    
+  }
+  .left{
+    flex:0.2;
   }
   .left p {
     font-size:2rem;
@@ -182,8 +202,11 @@ button:focus {
       margin-right:280px; */
 }
 
+
+
+
 .modal-container {
-  background-color:rgba(0,0,0,.3);
+  background-color:rgba(0,0,0,.7);
   display:none;
   position:fixed;
   top:0;
@@ -255,6 +278,8 @@ button:focus {
     opacity:1
   }
 }
+
+
 
 
 
